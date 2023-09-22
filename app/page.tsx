@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className='flex justify-center w-screen'>
+      <div className='flex w-screen'>
         <Chat />
       </div>
     </div>
