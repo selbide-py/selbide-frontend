@@ -2,10 +2,6 @@
 import React from "react";
 import { BiSend } from "react-icons/bi";
 
-// const styles = {
-//   'w-fit p-3 text-lg bg-[#64CCC5] mb-4 rounded-xl'
-// },
-
 const chats = [
   <>
     <div className='w-fit p-3 break-normal max-w-xl shadow-lg shadow-[#64CCC533] text-lg bg-[#64CCC5] mb-4 rounded-xl'>
@@ -61,13 +57,13 @@ const chats = [
   </>,
 ];
 
-const Chat = () => {
+const Achat = () => {
   return (
     <div className='text-white w-4/5 h-[calc(100vh-120px)] bg-slate.900 p-2 rounded-xl m-3'>
       <div className='flex flex-col h-full'>
         <div className='overflow-auto flex-col h-full'>
           <div className='mb-5 p-5 font-mono font-semibold text-center text-3xl'>
-            Welcome To Selbide Chat
+            Legal Assistance
           </div>
           <div className='font-sans'>{chats}</div>
         </div>
@@ -86,4 +82,4 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default Achat;

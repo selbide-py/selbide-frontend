@@ -14,7 +14,7 @@ const FileUpload = () => {
   const [files, setFiles] = useState([]);
 
   return (
-    <div className='w-1/2 m-3'>
+    <div className='w-full m-3'>
       <FilePond
         files={files}
         onupdatefiles={(fileItems) => {
