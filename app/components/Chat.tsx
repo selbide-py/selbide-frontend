@@ -63,7 +63,7 @@ const chats = [
 
 const Chat = () => {
   return (
-    <div className='text-white w-4/5 h-[calc(100vh-120px)] bg-slate.900 p-2 rounded-xl m-3'>
+    <div className='text-white w-4/6 h-[calc(100vh-120px)] bg-shade.900 p-2 rounded-xl m-3'>
       <div className='flex flex-col h-full'>
         <div className='overflow-auto flex-col h-full'>
           <div className='mb-5 p-5 font-mono font-semibold text-center text-3xl'>

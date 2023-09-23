@@ -35,6 +35,8 @@ const Summary = () => {
       </Button>
 
       <Modal
+        // bg='black'
+        // color='white'
         closeOnOverlayClick={false}
         isOpen={isOpen}
         onClose={onClose}
