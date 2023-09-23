@@ -21,10 +21,11 @@ const FileUpload = () => {
           setFiles(fileItems);
         }}
         allowMultiple={true}
-        maxFiles={3}
+        maxFiles={5}
         server='/api'
         name='files'
         labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
+        // className='bg-red-100'
       />
     </div>
   );

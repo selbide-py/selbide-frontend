@@ -63,7 +63,7 @@ const chats = [
 
 const Chat = () => {
   return (
-    <div className='text-white w-4/5 h-[calc(100vh-88px)] bg-[#001C30] p-2 rounded-xl m-3'>
+    <div className='text-white w-4/5 h-[calc(100vh-120px)] bg-[#001C30] p-2 rounded-xl m-3'>
       <div className='flex flex-col h-full'>
         <div className='overflow-auto flex-col h-full'>
           <div className='mb-5 p-5 font-mono font-semibold text-center text-3xl'>
@@ -74,8 +74,8 @@ const Chat = () => {
         <div className='flex pt-2'>
           <input
             type='text'
-            placeholder='Your message...'
-            className='p-3 rounded-xl w-full'
+            placeholder='Your query...'
+            className='p-3 rounded-xl w-full bg-slate-700'
           />
           <button className='text-4xl p-2 text-white'>
             <BiSend />
