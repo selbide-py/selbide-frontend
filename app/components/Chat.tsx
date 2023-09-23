@@ -1,10 +1,5 @@
-"use client";
 import React from "react";
-import { BiSend } from "react-icons/bi";
-
-// const styles = {
-//   'w-fit p-3 text-lg bg-[#64CCC5] mb-4 rounded-xl'
-// },
+import ChatButton from "./ChatButton";
 
 const chats = [
   <>
@@ -72,14 +67,7 @@ const Chat = () => {
           <div className='font-sans'>{chats}</div>
         </div>
         <div className='flex pt-2'>
-          <input
-            type='text'
-            placeholder='Your query...'
-            className='p-3 rounded-xl w-full bg-slate-700'
-          />
-          <button className='text-4xl p-2 text-white'>
-            <BiSend />
-          </button>
+          <ChatButton />
         </div>
       </div>
     </div>

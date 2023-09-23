@@ -1,6 +1,5 @@
 'use client';
 import React from "react";
-import { useState } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -27,7 +26,6 @@ In convallis purus purus, gravida maximus tortor iaculis quis. Proin sit amet sa
 Donec at mauris gravida, rhoncus ipsum nec, porttitor nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut volutpat tortor et mauris viverra, ac feugiat nisi dictum. Sed malesuada interdum magna, nec bibendum velit ultricies volutpat. Suspendisse potenti. Curabitur id sapien sit amet felis condimentum semper ut eu dolor. Ut posuere augue tincidunt commodo imperdiet. Morbi quis sapien quis nisl porta efficitur. Praesent euismod lectus a tortor eleifend tincidunt. Nullam gravida velit quis mi tincidunt, at dictum quam blandit. Pellentesque tortor sapien, ornare nec ligula vitae, vehicula sollicitudin enim. Curabitur semper dolor non mollis viverra. Nunc tortor elit, fermentum quis purus vel, pellentesque rutrum enim. Fusce dictum egestas lectus, sit amet euismod tortor elementum ornare. Praesent placerat lectus bibendum metus auctor placerat. Proin nunc tellus, fringilla sit amet blandit nec, tempus id est.`;
 
 const Summary = () => {
-  const [summaryContent, setSummaryContent] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
