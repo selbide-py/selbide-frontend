@@ -11,7 +11,6 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 const FileUpload = () => {
   const [files, setFiles] = useState([]);
-
   return (
     <div className='w-full'>
       <FilePond
@@ -19,7 +18,7 @@ const FileUpload = () => {
         onupdatefiles={setFiles}
         allowMultiple={true}
         maxFiles={5}
-        server='http://10.12.46.153:8080/'
+        server='http://10.12.46.153:8080/file_upload'
         name='files'
         labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
       />

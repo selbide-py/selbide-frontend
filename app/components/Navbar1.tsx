@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
 import { Box, Heading, Button } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 function Navbar1() {
+  const pathname = usePathname();
   return (
     <>
       <Box display='flex' bg='slate.900' p={4} justifyContent='space-between'>
@@ -13,24 +16,24 @@ function Navbar1() {
           </Text>
         </div>
         <div className='flex gap-4 items-center'>
-          <Link href='/assistant'>
-            <Button
-              variant='unstyled'
-              color='white'
-              className='flex items-center p-3 hover:text-teal-500'
-              size='lg'
-            >
-              Assistant
-            </Button>
-          </Link>
           <Link href='/'>
             <Button
               variant='unstyled'
-              color='white'
+              color={pathname == "/" ? "teal.300" : "white"}
               className='flex items-center p-3 hover:text-teal-500'
               size='lg'
             >
               Document
+            </Button>
+          </Link>
+          <Link href='/assistant'>
+            <Button
+              variant='unstyled'
+              color={pathname == "/assistant" ? "teal.300" : "white"}
+              className='flex items-center p-3 hover:text-teal-500'
+              size='lg'
+            >
+              Assistant
             </Button>
           </Link>
         </div>
