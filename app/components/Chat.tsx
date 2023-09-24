@@ -3,6 +3,10 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { BiSend } from 'react-icons/bi';
+import Cookies from 'js-cookie';
+
+const id = Cookies.get('user_id');
+console.log('cookie', id);
 
 const Chat = () => {
   const [message, setMessage] = useState('');
@@ -12,12 +16,14 @@ const Chat = () => {
     getChat();
   }, []);
 
+
+
   async function getChat() {
     try {
       const res = await axios.post(
         'https://web-production-8d29.up.railway.app/getchat',
         {
-          id: '650f70a91f21e8dfab6ff523',
+          id: `${id}`,
         },
         {
           headers: { 'Content-Type': 'application/json' },
@@ -29,14 +35,14 @@ const Chat = () => {
     }
   }
 
-  console.log(chats);
+  // console.log(chats);
 
   async function addChat(msg: string) {
     try {
       const res = await axios.post(
         'https://web-production-8d29.up.railway.app/add_chat',
         {
-          user_id: '650f70a91f21e8dfab6ff523',
+          user_id: `${id}`,
           message: msg,
         },
         {
@@ -50,7 +56,7 @@ const Chat = () => {
   }
 
   async function handleSend() {
-    console.log(message);
+    // console.log(message);
     await addChat(message);
     setMessage('');
     await getChat();
