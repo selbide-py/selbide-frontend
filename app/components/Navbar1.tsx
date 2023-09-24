@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 function Navbar1() {
   const pathname = usePathname();
   return (
-    <>
+    <div>
       <Box display='flex' bg='slate.900' p={4} justifyContent='space-between'>
         <div>
           <Heading color='white'>Selbide</Heading>
@@ -46,7 +46,7 @@ function Navbar1() {
           </Button>
         </div>
       </Box>
-    </>
+    </div>
   );
 }
 
