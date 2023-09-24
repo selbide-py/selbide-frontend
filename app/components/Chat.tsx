@@ -1,11 +1,11 @@
-"use client";
-import React from "react";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { BiSend } from "react-icons/bi";
+'use client';
+import React from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { BiSend } from 'react-icons/bi';
 
 const Chat = () => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [chats, setChats] = useState([]);
 
   useEffect(() => {
@@ -15,17 +15,17 @@ const Chat = () => {
   async function getChat() {
     try {
       const res = await axios.post(
-        "https://web-production-8d29.up.railway.app/getchat",
+        'https://web-production-8d29.up.railway.app/getchat',
         {
-          id: "650f70a91f21e8dfab6ff523",
+          id: '650f70a91f21e8dfab6ff523',
         },
         {
-          headers: { "Content-Type": "application/json" },
+          headers: { 'Content-Type': 'application/json' },
         }
       );
       setChats(res.data.chat_messages);
     } catch (error) {
-      console.error("Error fetching chat:", error);
+      console.error('Error fetching chat:', error);
     }
   }
 
@@ -34,25 +34,25 @@ const Chat = () => {
   async function addChat(msg: string) {
     try {
       const res = await axios.post(
-        "https://web-production-8d29.up.railway.app/add_chat",
+        'https://web-production-8d29.up.railway.app/add_chat',
         {
-          user_id: "650f70a91f21e8dfab6ff523",
+          user_id: '650f70a91f21e8dfab6ff523',
           message: msg,
         },
         {
-          headers: { "Content-Type": "application/json" },
+          headers: { 'Content-Type': 'application/json' },
         }
       );
       return res.data;
     } catch (error) {
-      console.error("Error adding chat:", error);
+      console.error('Error adding chat:', error);
     }
   }
 
   async function handleSend() {
     console.log(message);
     await addChat(message);
-    setMessage("");
+    setMessage('');
     await getChat();
   }
 
@@ -66,8 +66,8 @@ const Chat = () => {
         key={chat.id}
         className={`${
           chat.is_user
-            ? "ml-auto text-lg break-normal shadow-lg shadow-[#176B8733] max-w-xl w-fit p-3 bg-[#176B87] mb-4 rounded-xl"
-            : "w-fit p-3 break-normal max-w-xl shadow-lg shadow-[#64CCC533] text-lg bg-[#64CCC5] mb-4 rounded-xl"
+            ? 'ml-auto text-lg break-normal shadow-lg shadow-[#176B8733] max-w-xl w-fit p-3 bg-[#176B87] mb-4 rounded-xl'
+            : 'w-fit p-3 break-normal max-w-xl shadow-lg shadow-[#64CCC533] text-lg bg-[#64CCC5] mb-4 rounded-xl'
         }`}
       >
         {chat.message}

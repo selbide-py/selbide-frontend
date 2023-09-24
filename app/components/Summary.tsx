@@ -1,5 +1,5 @@
 'use client';
-import React from "react";
+import React from 'react';
 import {
   Modal,
   ModalOverlay,
@@ -8,8 +8,8 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-} from "@chakra-ui/react";
-import { Button, useDisclosure } from "@chakra-ui/react";
+} from '@chakra-ui/react';
+import { Button, useDisclosure } from '@chakra-ui/react';
 
 const summary = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus, quam ut lobortis maximus, tellus quam sollicitudin nunc, pellentesque venenatis risus augue sed ex. Donec porta arcu sit amet neque rhoncus, vitae vulputate ligula gravida. Nulla ex enim, faucibus ac metus blandit, eleifend facilisis lectus. Quisque consectetur a eros eu aliquet. Aliquam tincidunt, massa id congue vestibulum, leo massa pharetra orci, eget hendrerit est nisi in nunc. Aenean id pretium nibh. Aliquam erat volutpat. Proin vel mollis augue. Maecenas sed augue sit amet quam blandit varius nec accumsan lectus. Cras in dolor non lacus malesuada rutrum nec non tellus. Ut eget mi venenatis, feugiat ligula condimentum, varius purus. Suspendisse eget euismod justo.
 

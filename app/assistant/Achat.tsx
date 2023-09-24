@@ -1,5 +1,8 @@
-import React from "react";
-import ChatButton from "../components/ChatButton";
+'use client';
+import { useState } from 'react';
+import React from 'react';
+import { BiSend } from 'react-icons/bi';
+// import ChatButton from "../components/ChatButton";
 const chats = [
   <>
     <div className='w-fit p-3 break-normal max-w-xl shadow-lg shadow-[#64CCC533] text-lg bg-[#64CCC5] mb-4 rounded-xl'>
@@ -56,6 +59,19 @@ const chats = [
 ];
 
 const Achat = () => {
+  const [message, setMessage] = useState('');
+
+  async function handleSend() {
+    console.log(message);
+    // await addChat(message);
+    setMessage('');
+    // await getChat();
+  }
+
+  function handleChange(event: any) {
+    setMessage(event.target.value);
+  }
+
   return (
     <div className='text-white w-4/5 h-[calc(100vh-120px)] bg-slate.900 p-2 rounded-xl m-3'>
       <div className='flex flex-col h-full'>
@@ -66,7 +82,16 @@ const Achat = () => {
           <div className='font-sans'>{chats}</div>
         </div>
         <div className='flex pt-2'>
-          <ChatButton />
+          <input
+            type='text'
+            placeholder='Your query...'
+            className='p-3 rounded-xl w-full bg-slate-700'
+            value={message}
+            onChange={handleChange}
+          />
+          <button className='text-4xl p-2 text-white' onClick={handleSend}>
+            <BiSend />
+          </button>
         </div>
       </div>
     </div>
