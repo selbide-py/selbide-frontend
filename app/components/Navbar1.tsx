@@ -38,7 +38,7 @@ function Navbar1() {
       <div className='flex items-center'>
         <Button
           variant='unstyled'
-          className='bg-teal-500 text-white p-3 flex items-center hover:bg-transparent hover:text-teal-500'
+          className='bg-[#64CCC5] text-white p-3 flex items-center hover:bg-transparent hover:text-teal-500'
         >
           Sign Up
         </Button>

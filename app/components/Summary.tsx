@@ -7,7 +7,7 @@ import {
   ModalHeader,
   ModalFooter,
   ModalBody,
-  ModalCloseButton,
+  // ModalCloseButton,
 } from '@chakra-ui/react';
 import { Button, useDisclosure } from '@chakra-ui/react';
 
@@ -35,24 +35,20 @@ const Summary = () => {
       </Button>
 
       <Modal
-        // bg='black'
-        // color='white'
         closeOnOverlayClick={false}
         isOpen={isOpen}
         onClose={onClose}
         size='full'
       >
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent color='white' bg='gray.900'>
           <ModalHeader>Legalised Summary</ModalHeader>
-          <ModalCloseButton />
+          {/* <ModalCloseButton /> */}
           <ModalBody pb={6}>{summary}</ModalBody>
-
           <ModalFooter>
-            <Button variant='outline' colorScheme='blue' mr={3}>
-              Save
+            <Button variant='outline' colorScheme='white' onClick={onClose}>
+              Close
             </Button>
-            <Button onClick={onClose}>Close</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

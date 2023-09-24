@@ -4,7 +4,7 @@ import FileUpload from './components/FileUpload';
 import Summary from './components/Summary';
 import LoginModal from './components/login/LoginModal';
 import { Suspense } from 'react';
-import Loading from './loading'; 
+import Loading from './loading';
 
 export default function Home() {
   return (
@@ -12,10 +12,12 @@ export default function Home() {
       <LoginModal />
       <Navbar1 />
       <div className='flex w-screen'>
-          <Chat />
+        <Chat />
         <div className='w-2/6 m-3'>
           <FileUpload />
-          <Summary />;
+          <div className='w-full flex justify-center'>
+            <Summary />;
+          </div>
         </div>
       </div>
     </div>
