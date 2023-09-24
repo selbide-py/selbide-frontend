@@ -3,8 +3,8 @@ import Navbar1 from './components/Navbar1';
 import FileUpload from './components/FileUpload';
 import Summary from './components/Summary';
 import LoginModal from './components/login/LoginModal';
-import { Suspense } from 'react';
-import Loading from './loading';
+// import { Suspense } from 'react';
+// import Loading from './loading';
 
 export default function Home() {
   return (
