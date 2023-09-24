@@ -8,17 +8,19 @@ function Navbar1() {
   return (
     <div suppressHydrationWarning={true}>
       <Box display='flex' bg='slate.900' p={4} justifyContent='space-between'>
-        <div>
-          <Heading color='white'>Selbide</Heading>
-          <Text fontSize='sm' fontFamily='sans-serif' color='white'>
-            Your legal help assistant
-          </Text>
-        </div>
+        <Link href='/'>
+          <div>
+            <Heading color='white'>Selbide</Heading>
+            <Text fontSize='sm' fontFamily='sans-serif' color='white'>
+              Your legal help assistant
+            </Text>
+          </div>
+        </Link>
         <div className='flex gap-4 items-center'>
-          <Link href='/'>
+          <Link href='/document'>
             <Button
               variant='unstyled'
-              color={pathname == '/' ? 'teal.300' : 'white'}
+              color={pathname == '/document' ? 'teal.300' : 'white'}
               className='flex items-center p-3 hover:text-teal-500'
               size='lg'
             >

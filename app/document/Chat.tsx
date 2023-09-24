@@ -15,13 +15,13 @@ const Chat = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getChat();
+    getSummaryChat();
   }, []);
 
-  async function getChat() {
+  async function getSummaryChat() {
     try {
       const res = await axios.post(
-        'https://web-production-8d29.up.railway.app/getchat',
+        'https://web-production-8d29.up.railway.app/get_summary_chat',
         {
           id: `${id}`,
         },
@@ -59,7 +59,7 @@ const Chat = () => {
     // console.log(message);
     await addChat(message);
     setMessage('');
-    await getChat();
+    await getSummaryChat();
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

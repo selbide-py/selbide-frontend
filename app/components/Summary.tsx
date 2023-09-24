@@ -27,7 +27,7 @@ const Summary = () => {
       const res = await axios.post(
         'https://web-production-8d29.up.railway.app/summarize',
         {
-          id: `${id}`,
+          user_id: `${id}`,
         },
         {
           headers: { 'Content-Type': 'application/json' },

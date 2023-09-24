@@ -5,12 +5,16 @@ import 'filepond/dist/filepond.min.css';
 import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation';
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
+import Cookies from 'js-cookie';
+
+const id = Cookies.get('user_id');
+console.log('cookie', id);
 
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 const FileUpload = () => {
   const [files, setFiles] = useState([]);
-  const userId = '650f70a91f21e8dfab6ff523';
+  const userId = `${id}`;
 
   const handleProcessFile = (
     fieldName,

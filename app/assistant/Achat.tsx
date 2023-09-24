@@ -48,6 +48,7 @@ const Achat = () => {
         },
         {
           headers: { 'Content-Type': 'application/json' },
+          timeout: 999999,
         }
       );
       return res.data;

@@ -1,25 +1,42 @@
-import Chat from './components/Chat';
-import Navbar1 from './components/Navbar1';
-import FileUpload from './components/FileUpload';
-import Summary from './components/Summary';
-import LoginModal from './components/login/LoginModal';
-// import { Suspense } from 'react';
-// import Loading from './loading';
-
-export default function Home() {
+import React from 'react';
+import { Button } from '@chakra-ui/react';
+import Link from 'next/link';
+const Document = () => {
   return (
-    <div className='bg-slate-900'>
-      <LoginModal />
-      <Navbar1 />
-      <div className='flex w-screen'>
-        <Chat />
-        <div className='w-2/6 m-3'>
-          <FileUpload />
-          <div className='w-full flex justify-center'>
-            <Summary />;
+    <div className='bg-slate-900 text-white h-screen w-screen flex items-center justify-center'>
+      <div className='h-1/3 scale-125'>
+        <div className='text-center'>
+          <div className='text-8xl'>
+            <span>Sel</span>
+            <span className='text-teal-400'>Bide</span>.
           </div>
+          <div className='text-2xl'>Your legal help assistant</div>
+        </div>
+        <div className='mt-7 flex gap-3 justify-evenly'>
+          <Link href='/document'>
+            <Button
+              variant='outline'
+              color='white'
+              size='lg'
+              className='hover:text-teal-600'
+            >
+              Document
+            </Button>
+          </Link>
+          <Link href='/assistant'>
+            <Button
+              variant='outline'
+              color='white'
+              size='lg'
+              className='hover:text-teal-600'
+            >
+              Assistant
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Document;
