@@ -4,6 +4,7 @@ import React from 'react';
 import axios from 'axios';
 import { BiSend } from 'react-icons/bi';
 import Cookies from 'js-cookie';
+import ReactLoading from 'react-loading';
 
 const id = Cookies.get('user_id');
 console.log('cookie', id);
@@ -12,6 +13,7 @@ console.log('cookie', id);
 const Achat = () => {
   const [message, setMessage] = useState('');
   const [chats, setChats] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getChat();
@@ -29,8 +31,10 @@ const Achat = () => {
         }
       );
       setChats(res.data.chat_messages);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching chat:', error);
+      setLoading(false);
     }
   }
 
@@ -86,7 +90,13 @@ const Achat = () => {
           <div className='mb-5 p-5 font-mono font-semibold text-center text-3xl'>
             Legal Assistance
           </div>
-          <div className='font-sans'>{displayChats}</div>
+          {loading ? (
+            <div className='justify-center h-3/5 items-center flex'>
+              <ReactLoading type='spin' color='white' />
+            </div>
+          ) : (
+            <div className='font-sans'>{displayChats}</div>
+          )}
         </div>
         <div className='flex pt-2'>
           <input

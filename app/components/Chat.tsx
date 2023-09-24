@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { BiSend } from 'react-icons/bi';
+import ReactLoading from 'react-loading';
 import Cookies from 'js-cookie';
 
 const id = Cookies.get('user_id');
@@ -11,6 +12,7 @@ console.log('cookie', id);
 const Chat = () => {
   const [message, setMessage] = useState('');
   const [chats, setChats] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getChat();
@@ -28,11 +30,12 @@ const Chat = () => {
         }
       );
       setChats(res.data.chat_messages);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching chat:', error);
+      setLoading(false);
     }
   }
-
 
   async function addChat(msg: string) {
     try {
@@ -87,7 +90,13 @@ const Chat = () => {
           <div className='mb-5 p-5 font-mono font-semibold text-center text-3xl'>
             Welcome To Selbide Chat
           </div>
-          <div className='font-sans'>{displayChats}</div>
+          {loading ? (
+            <div className='justify-center h-3/5 items-center flex'>
+              <ReactLoading type='spin' color='white' />
+            </div>
+          ) : (
+            <div className='font-sans'>{displayChats}</div>
+          )}
         </div>
         <div className='flex pt-2'>
           <input

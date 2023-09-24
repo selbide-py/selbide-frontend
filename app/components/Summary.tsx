@@ -14,14 +14,13 @@ import {
 import { Button, useDisclosure } from '@chakra-ui/react';
 import Cookies from 'js-cookie';
 
-
-
 const id = Cookies.get('user_id');
 console.log('cookie', id);
 
 const Summary = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [summary, setSummary] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   async function getSummary() {
     try {
@@ -34,21 +33,30 @@ const Summary = () => {
           headers: { 'Content-Type': 'application/json' },
         }
       );
+
       setSummary(res.data.sun);
+      setIsLoading(false);
     } catch (error) {
       console.error('Error fetching Summary:', error);
     }
   }
-  console.log(summary);
+
   async function handleOpen() {
+    setIsLoading(true);
+    // await new Promise((resolve) => setTimeout(resolve, 5000));
     await getSummary();
     onOpen();
   }
-
+  console.log(isLoading);
   return (
     <>
-      <Button variant='outline' color='white' onClick={handleOpen}>
-        Summarise
+      <Button
+        isLoading={isLoading}
+        variant='outline'
+        color='white'
+        onClick={handleOpen}
+      >
+        Summarize
       </Button>
 
       <Modal
