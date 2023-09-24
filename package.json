@@ -17,6 +17,7 @@
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.16",
+    "axios": "^1.5.0",
     "eslint-config-next": "13.5.2",
     "filepond": "^4.30.4",
     "filepond-plugin-image-exif-orientation": "^1.0.11",
