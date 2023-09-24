@@ -16,11 +16,6 @@ const Chat = () => {
     getChat();
   }, []);
 
-  // const timer = setTimeout(() => {
-  //       getChat();
-  //     }
-  //   , 1000);
-
   async function getChat() {
     try {
       const res = await axios.post(
@@ -38,7 +33,6 @@ const Chat = () => {
     }
   }
 
-  // console.log(chats);
 
   async function addChat(msg: string) {
     try {
