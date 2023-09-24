@@ -51,8 +51,6 @@ const LoginModal = () => {
   }
 };
 
-
-  
   return (
     <Modal isOpen={!Cookies.get('user_id')} onClose={onClose}>
       <ModalOverlay />

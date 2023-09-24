@@ -68,6 +68,7 @@ const Achat = () => {
     // await getChat();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function handleChange(event: any) {
     setMessage(event.target.value);
   }
