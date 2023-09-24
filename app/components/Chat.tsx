@@ -14,9 +14,17 @@ const Chat = () => {
 
   useEffect(() => {
     getChat();
+
+    
+    
+    
   }, []);
 
-
+// const timer = setTimeout(() => {
+//       getChat();
+//     }
+//   , 1000);
+  
 
   async function getChat() {
     try {
