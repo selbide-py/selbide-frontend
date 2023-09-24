@@ -18,7 +18,7 @@ const FileUpload = () => {
         onupdatefiles={setFiles}
         allowMultiple={true}
         maxFiles={5}
-        server='http://10.12.46.153:8080/file_upload'
+        server='https://web-production-8d29.up.railway.app/file_upload'
         name='files'
         labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
       />
