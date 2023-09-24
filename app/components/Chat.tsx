@@ -16,8 +16,6 @@ const Chat = () => {
     getChat();
   }, []);
 
-
-
   async function getChat() {
     try {
       const res = await axios.post(
@@ -62,10 +60,12 @@ const Chat = () => {
     await getChat();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function handleChange(event: any) {
     setMessage(event.target.value);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const displayChats = chats.map((chat: any) => {
     return (
       <div
