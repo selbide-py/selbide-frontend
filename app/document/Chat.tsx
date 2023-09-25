@@ -56,7 +56,6 @@ const Chat = () => {
   }
 
   async function handleSend() {
-    // console.log(message);
     await addChat(message);
     setMessage('');
     await getSummaryChat();

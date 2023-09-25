@@ -1,6 +1,7 @@
 'use client';
-import { useState, useEffect } from 'react';
 import React from 'react';
+import { useState, useEffect } from 'react';
+import useChatScroll from '../components/ChatScroll';
 import axios from 'axios';
 import { BiSend } from 'react-icons/bi';
 import Cookies from 'js-cookie';
@@ -8,12 +9,12 @@ import ReactLoading from 'react-loading';
 
 const id = Cookies.get('user_id');
 console.log('cookie', id);
-// import ChatButton from "../components/ChatButton";
 
 const Achat = () => {
   const [message, setMessage] = useState('');
   const [chats, setChats] = useState([]);
   const [loading, setLoading] = useState(true);
+  const ref = useChatScroll(chats);
 
   useEffect(() => {
     getChat();
@@ -72,7 +73,7 @@ const Achat = () => {
   const displayChats = chats.map((chat: any) => {
     return (
       <div
-        key={chat.id}
+        key={chat._id}
         className={`${
           chat.is_user
             ? 'ml-auto text-lg break-normal shadow-lg shadow-[#176B8733] max-w-xl w-fit p-3 bg-[#176B87] mb-4 rounded-xl'
@@ -87,7 +88,7 @@ const Achat = () => {
   return (
     <div className='text-white w-4/5 h-[calc(100vh-120px)] bg-slate.900 p-2 rounded-xl m-3'>
       <div className='flex flex-col h-full'>
-        <div className='overflow-auto flex-col h-full'>
+        <div ref={ref} className='overflow-auto flex-col h-full'>
           <div className='mb-5 p-5 font-mono font-semibold text-center text-3xl'>
             Legal Assistance
           </div>

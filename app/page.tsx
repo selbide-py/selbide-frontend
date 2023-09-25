@@ -1,9 +1,12 @@
 import React from 'react';
 import { Button } from '@chakra-ui/react';
 import Link from 'next/link';
+// import LoginModal from './components/LoginModal';
 const Document = () => {
   return (
     <div className='bg-slate-900 text-white h-screen w-screen flex items-center justify-center'>
+      {/* LoginModal is causing hydration error */}
+      {/* <LoginModal /> */}
       <div className='h-1/3 scale-125'>
         <div className='text-center'>
           <div className='text-8xl'>

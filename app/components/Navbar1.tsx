@@ -10,7 +10,10 @@ function Navbar1() {
       <Box display='flex' bg='slate.900' p={4} justifyContent='space-between'>
         <Link href='/'>
           <div>
-            <Heading color='white'>Selbide</Heading>
+            <Heading color='white'>
+              <span>Sel</span>
+              <span className='text-teal-400'>Bide</span>
+            </Heading>
             <Text fontSize='sm' fontFamily='sans-serif' color='white'>
               Your legal help assistant
             </Text>

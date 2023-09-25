@@ -9,7 +9,6 @@ import {
   ModalHeader,
   ModalFooter,
   ModalBody,
-  // ModalCloseButton,
 } from '@chakra-ui/react';
 import { Button, useDisclosure } from '@chakra-ui/react';
 import Cookies from 'js-cookie';
@@ -43,11 +42,9 @@ const Summary = () => {
 
   async function handleOpen() {
     setIsLoading(true);
-    // await new Promise((resolve) => setTimeout(resolve, 5000));
     await getSummary();
     onOpen();
   }
-  console.log(isLoading);
   return (
     <>
       <Button
@@ -68,7 +65,6 @@ const Summary = () => {
         <ModalOverlay />
         <ModalContent color='white' bg='gray.900'>
           <ModalHeader>Legalised Summary</ModalHeader>
-          {/* <ModalCloseButton /> */}
           <ModalBody pb={6}>{summary}</ModalBody>
           <ModalFooter>
             <Button variant='outline' colorScheme='white' onClick={onClose}>
